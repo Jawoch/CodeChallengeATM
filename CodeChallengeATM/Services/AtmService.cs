@@ -9,14 +9,16 @@ namespace CodeChallengeATM.Services
     public class AtmService : IAtmService
 
     {
-        public void GetNotes(InputForm inputForm)
+        public List<decimal> GetNotes(InputForm inputForm)
         {
+            if (inputForm.ImputedAmount == null || !IsValidInput(inputForm.ImputedAmount))
+                return new List<decimal>();
+
             var results = new List<decimal>();
 
-            if (!IsValidInput(inputForm.ImputedAmount)) return;
-            CalculateBills(inputForm.ImputedAmount, ref results);
+            CalculateBills((decimal)inputForm.ImputedAmount, ref results);
             FillUpWithZeros(ref results);
-            inputForm.Results = results;
+            return results;
         }
         private static void FillUpWithZeros(ref List<decimal> results)
         {
@@ -25,13 +27,13 @@ namespace CodeChallengeATM.Services
         }
 
 
-        private static bool IsValidInput(decimal input)
+        private static bool IsValidInput(decimal? input)
         {
-            if (input < 0)
-                throw new InvalidArgumentException("Provided amount is invalid please provide new amount");
+            if (input == null || input < 0)
+                throw new InvalidArgumentException(Constants.ProvideNewAmountException);
 
             if (input % 10 != 0)
-                throw new NoteUnavailableException("Note Unavailable, lowest available note is 10 $");
+                throw new NoteUnavailableException(Constants.AvailableNoteIsException);
 
             return true;
         }

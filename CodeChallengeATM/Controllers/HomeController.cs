@@ -21,7 +21,7 @@ namespace CodeChallengeATM.Controllers
 
             try
             {
-                _atmService.GetNotes(form);
+                form.Results = _atmService.GetNotes(form);
             }
             catch (Exception e)
             {

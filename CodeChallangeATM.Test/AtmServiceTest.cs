@@ -34,8 +34,17 @@ namespace CodeChallengeATM.Test
         {
             var form = new InputForm() { ImputedAmount = 40, Results = new List<decimal>() };
             var atmService = new AtmService();
-            atmService.GetNotes(form);
-            Assert.AreEqual(new List<decimal>() { 0, 0, 2, 0 }, form.Results);
+
+            Assert.AreEqual(new List<decimal>() { 0, 0, 2, 0 }, atmService.GetNotes(form));
+        }
+
+        [Test]
+        public void GetNotes_InputNullValue()
+        {
+            var form = new InputForm() { ImputedAmount = null, Results = new List<decimal>() };
+            var atmService = new AtmService();
+
+            Assert.AreEqual(new List<decimal>(), atmService.GetNotes(form));
         }
     }
 }

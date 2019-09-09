@@ -1,9 +1,10 @@
-﻿using CodeChallengeATM.Models;
+﻿using System.Collections.Generic;
+using CodeChallengeATM.Models;
 
 namespace CodeChallengeATM.Services
 {
     public interface IAtmService
     {
-        void GetNotes(InputForm inputForm);
+        List<decimal> GetNotes(InputForm inputForm);
     }
 }
