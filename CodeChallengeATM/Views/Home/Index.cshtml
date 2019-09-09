@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="row delimiter" >
+<img src="@Url.Content($" images/100USD.jpg")" alt="" />
+<div class="row delimiter">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,7 +15,7 @@
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <input type="submit" asp-route="Sub" class="btn btn-default" />
-            </div>  
+            </div>
         </form>
     </div>
 </div>
