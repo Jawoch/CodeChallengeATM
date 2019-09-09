@@ -1,0 +1,1 @@
+[![Board Status](https://dev.azure.com/JawoszekMSC/13b1d456-2058-44d9-9f75-24ebc3c2cd34/8e5c6f55-43ee-4065-a706-537b96b0513a/_apis/work/boardbadge/63ee7bbe-e532-407e-9a95-b2e706b2609e)](https://dev.azure.com/JawoszekMSC/13b1d456-2058-44d9-9f75-24ebc3c2cd34/_boards/board/t/8e5c6f55-43ee-4065-a706-537b96b0513a/Microsoft.RequirementCategory)
